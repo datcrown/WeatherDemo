@@ -38,6 +38,7 @@
 		84C1F4E71F63E2C8008C9C0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84C1F4ED1F63E60C008C9C0C /* CurrentWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewController.swift; sourceTree = "<group>"; };
 		84C5C8CD1F64C95000A91589 /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
+		84F2C0171F6E04B700B06401 /* Geofencing.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Geofencing.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +101,7 @@
 				84C1F4E21F63E2C8008C9C0C /* Assets.xcassets */,
 				84C1F4E41F63E2C8008C9C0C /* LaunchScreen.storyboard */,
 				84C1F4E71F63E2C8008C9C0C /* Info.plist */,
+				84F2C0171F6E04B700B06401 /* Geofencing.gpx */,
 			);
 			path = Weather;
 			sourceTree = "<group>";

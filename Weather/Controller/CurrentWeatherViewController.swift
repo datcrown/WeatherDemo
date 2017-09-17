@@ -15,13 +15,14 @@ class CurrentWeatherViewController: UIViewController {
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var minTempLabel: UILabel!
     @IBOutlet weak var maxTempLabel: UILabel!
+    @IBOutlet weak var todayLabel: UILabel!
     
     var weather: Weather? {
         willSet {
             self.weather = DataService.shared.weather
         } didSet {
          
-            
+            self.todayLabel.text = "Today"
             self.nameLabel.text = self.weather?.location.name
             self.conditionLabel.text = self.weather?.current.condition.text
             guard let degree = self.weather?.current.temp_c else { return }
@@ -41,8 +42,9 @@ class CurrentWeatherViewController: UIViewController {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(updateData), name: notificationKey, object: nil)
         DataService.shared.requestData()
-        
-    }
+            }
+    
+    
     
     deinit {
         NotificationCenter.default.removeObserver(self)

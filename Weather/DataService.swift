@@ -12,7 +12,9 @@ let notificationKey = Notification.Name.init("requestAPI")
 
 class DataService {
     static let shared: DataService = DataService()
-    let urlString = "https://api.apixu.com/v1/forecast.json?key=6962e8277c8e49d081c14526170709&q=Hanoi&days=7"
+//    let urlString = "https://api.apixu.com/v1/forecast.json?key=6962e8277c8e49d081c14526170709&q=Hanoi&days=7"
+    var location: String?
+    
     private var _weather: Weather?
     var weather: Weather? {
         get {
@@ -58,6 +60,19 @@ class DataService {
     }
     
     func requestData() {
+        location = "Hanoi"
+        //    let urlString = "https://api.apixu.com/v1/forecast.json?key=6962e8277c8e49d081c14526170709&q=Hanoi&days=7"
+        let baseUrl = "https://api.apixu.com/v1/forecast.json?&days=7"
+        var urlString = baseUrl
+        var parameter : Dictionary<String, String> = [:]
+        parameter["q"] = location
+        parameter["key"] = "6962e8277c8e49d081c14526170709"
+        
+        
+        for (key,value) in parameter {
+            urlString += "&" + key + "=" + value
+            print(urlString)
+        }
         guard let url = URL(string: urlString) else { return }
         let requestURL = URLRequest(url: url)
         let task = URLSession.shared.dataTask(with: requestURL) { (data, response, error) in
