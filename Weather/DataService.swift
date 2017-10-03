@@ -66,7 +66,7 @@ class DataService {
         var urlString = baseUrl
         var parameter : Dictionary<String, String> = [:]
         parameter["q"] = location
-        parameter["key"] = "6962e8277c8e49d081c14526170709"
+        parameter["key"] = "9821532ea9684272b0f103704172809"
         
         
         for (key,value) in parameter {
